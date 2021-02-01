@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/cont.css">
+	<title>Exercício 2</title>
+</head>
+<body>
+
+  <h1>Esta simulação deve ser capaz de fazer correlações diretas entre reagentes/produtos de uma determinada reação química. </h1>
+
+  <h3>Ingredientes</h3>
+
+  Para formar <span id="H2O">1</span> Mol(s) de H2O precisa de: <span id="O2">32</span> Gramas de O2 unidas a  <span id="H2">2</span> Gramas de H2
+    
+<br/>
+<br/>
+
+    <input type="number" id="entry" placeholder="Mol de H2O">
+<br/>
+<br/>
+    <div id= "conta">
+      <div id = "resultado_1"></div>
+      <br/>
+      <div id = "resultado_2"></div>
+    </div> 
+    <script>
+      var input = document.getElementById("entry");
+var spanH2 = document.getElementById("H2");
+var spanO2 = document.getElementById("O2");
+var spanH2O = document.getElementById("H2O");
+var resultado_1 = document.getElementById("resultado_1");
+var resultado_2 = document.getElementById("resultado_2");
+
+input.onchange = function() {
+  var input_H2O = parseFloat(input.value);
+  var padraoO2 = 32; 
+  var padraoH2 = 2;
+
+  var O2 = input_H2O*padraoO2;
+  var H2 = input_H2O*padraoH2;
+
+
+  spanH2.innerHTML = H2;
+  spanO2.innerHTML = O2;
+  spanH2O.innerHTML = input_H2O;
+
+  resultado_1.innerHTML = O2 + " gramas de O2 = " + input_H2O + " mol(s) de H2O * " + padraoO2 + " gramas de O2";
+  
+  resultado_2.innerHTML = H2 + " gramas de H2 = " + input_H2O + " mol(s) de H2O * " + padraoH2 + " gramas de H2";
+}
+
+    </script>  	
+
+<div id="voltar">
+<a href="quimica.html">Voltar</a>
+</div>
+
+</body>
+</html>

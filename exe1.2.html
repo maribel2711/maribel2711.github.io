@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/cont.css">
+	<meta charset="utf-8">
+	<title>Exercício 1.2</title>
+</head>
+<body>
+
+	<h1>Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+aparecer na tela.</h1>
+
+	<div></div>
+	<button id = "botao">Aperte</button>
+
+	<div id="quad"></div>
+
+<script>
+
+ var btnElement = document.getElementById("botao");
+ var quadradosElement = document.getElementById("quad");
+ btnElement.onclick = function () {
+
+ var quadrado = document.createElement("div");
+ quadrado.style.width = "100px";
+ quadrado.style.height = "100px";
+ quadrado.style.backgroundColor = "#F00";
+
+ quadrado.onmouseover = function ()
+ {
+ 	quadrado.style.backgroundColor = getRandomColor();
+ };
+ quadradosElement.appendChild(quadrado);
+};
+</script>
+<div id="voltar">
+<a href="webcliente.html">Voltar</a>
+</div>
+</body>
+</html>

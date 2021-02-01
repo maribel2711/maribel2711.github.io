@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/cont.css">
+	<meta charset="utf-8">
+	<title>Exercicio 7</title>
+</head>
+<body>
+	<h1>Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o mouse por cima de
+algum quadrado troque sua cor para uma cor aleatória.</h1>
+		<div></div>
+	<button id = "botao">Aperte</button>
+
+	<div id="quad"></div>
+	
+	<script>
+	 var btnElement = document.getElementById("botao");
+	 var quadradosElement = document.getElementById("quad");
+	 btnElement.onclick = function () {
+
+	 var quadrado = document.createElement("div");
+	 quadrado.style.width = "100px";
+	 quadrado.style.height = "100px";
+	 quadrado.style.backgroundColor = "#F00";
+
+	 quadrado.onmouseover = function ()
+	 {
+	 	quadrado.style.backgroundColor = getRandomColor();
+	 };
+	 quadradosElement.appendChild(quadrado);
+	};
+
+	function getRandomColor() {
+	 var letters = "0123456789ABCDEF";
+	 var color = "#";
+	 for (var i = 0; i < 6; i++) {
+	 color += letters[Math.floor(Math.random() * 16)];
+	 }
+	 return color;
+	}
+	var newColor = getRandomColor(); 
+</script>
+<div id="voltar">
+<a href="webcliente.html">Voltar</a>
+</div>
+</body>
+</html>

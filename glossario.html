@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="./jquery-3.5.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/cont.css" media="screen" />
+	<script>
+		$(function () {
+			var glossary = [{
+				"id": 1, "term": "W3C"
+				, "defined": "World Wide Web Consortium – escritório responsável por desenvolver normas técnicas para a Internet"
+				, "author": "José Borges", "date": "2015-04-01"
+			}
+				, {
+				"id": 2, "term": "HTML"
+				, "defined": "HyperText Markup Language – linguagem de marcação utilizada para estruturar páginas web"
+				, "author": "Pedro Silva", "date": "2017-05-12"
+			}
+				, {
+				"id": 3, "term": "CSS"
+				, "defined": "Cascade Style Sheet – Folhas de estilo utilizadas para configurar a visualização de  páginas web."
+				, "author": "Maria Machado", "date": "2018-10-11"
+			}
+			];
+
+			$(glossary).each(function (id1, termo) { 
+				var title = termo.term;
+				$("#termos")
+					.append(
+						$("<li>")
+							.text(title).attr("value", id1)
+					)
+
+				$("#termos").on("click", "li", function () {
+					let id = $(this).val(); 
+					$("#term").text(glossary[id].term);
+					$("#defined").text(glossary[id].defined);
+					$("#author").text(glossary[id].author);
+					$("#date").text(glossary[id].date);
+
+				})
+
+
+			})
+
+		});
+
+	</script>
+</head>
+
+<body>
+
+	<h1>Glossário</h1>
+	<p> Clique nos termos para conhece-los</p>
+	<ul id="termos"></ul>
+	<div class="fundo">
+		<p id=term></p>
+		<p id=defined></p>
+		<p id=author></p>
+		<p id=date></p>
+	</div>
+	<div id="voltar">
+		<a href="webcliente.html">Voltar</a>
+		</div>
+</body>
+
+</html>

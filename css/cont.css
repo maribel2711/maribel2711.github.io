@@ -1,0 +1,41 @@
+#voltar a 
+{
+	padding: 2em;
+	display: block;
+	text-decoration:  none;
+	color: black;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+#voltar a:hover
+	{
+		color:#827d7d;
+		text-decoration: none; 
+	}
+body
+{
+	border-top:  50px solid #827d7d;
+}
+
+h1, h2, h3
+{
+   font-family: 'ZCOOL XiaoWei', serif;
+	font-style: normal;
+	color: #333333;
+	text-align: center;
+	padding-top:20px; 
+} 
+p
+{
+	font-family: 'Bubbler One', sans-serif;
+	text-align: center;
+}
+li
+{
+	text-align: left;
+	padding-left:50px;
+}
+input
+{
+	margin: 10px;
+}

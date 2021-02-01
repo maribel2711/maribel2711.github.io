@@ -1,0 +1,157 @@
+html, body
+	{
+		height: 100%;
+	}
+
+	body
+	{
+		margin: 0px;
+		padding: 0px;
+		background: #393b47;
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 12pt;
+		font-weight: 300;
+		color:  #272525;
+	}
+h4
+{
+	font-size: 20px;
+	color: #333333;
+	text-align: center;
+	font-family: 'Josefin Slab', serif;
+
+}
+
+h1 
+{
+   font-family: 'ZCOOL XiaoWei', serif;
+	font-style: normal;
+	font-size: 40px;
+	color: #333333;
+	text-align: center;
+	padding-top:20px; 
+} 
+p
+{
+	font-family: 'Bubbler One', sans-serif;
+	text-align: left;
+}
+
+	#header
+	{
+		position: relative;
+		float: left;
+		width: 300px;
+		padding: 3em 0em;
+	}
+
+#princ img
+	{
+		display: inline-block;
+		margin-bottom: 1em;
+		border-radius: 50%;
+		width: 170px;
+		height: 170px;
+	}
+#princ h1
+{
+font-family: 'ZCOOL XiaoWei', serif;
+color: white;
+display: block;
+font-size: 30px;
+}
+h3
+{
+
+}
+#princ p
+{
+	font-family:  'Thasadith', sans-serif;
+	text-align: center;
+	font-size:15px;
+}
+#princ a
+	{
+		text-decoration: none;
+		color: #FFF;
+	}
+	#pags li
+	{
+		border-top: 1px solid rgba(255,255,255,0.08);
+		text-align: center;
+		margin-right: 40px;	
+		border-radius: 10%;
+	}
+	#pags li a
+	{
+		display: block;
+		padding: 2em 1.5em;
+		text-align: center;
+		text-decoration:  none;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: rgba(255,255,255,0.5);
+	}
+	#pags a:hover
+	{
+		color: #22232a;
+		text-decoration: none; 
+	}
+	
+li
+{
+	font-family: 'Bubbler One', sans-serif;
+	font-size: 15px;
+	line-height: 1.8;
+
+}
+h3
+{
+	padding-top: 50px;
+	font-family: 'ZCOOL XiaoWei', serif;
+	text-align: left;
+}
+#pags a:link
+{
+	color: white;
+}
+	.container
+	{
+		overflow: hidden;
+		margin: 0em auto;
+		width: 1200px;
+	}
+
+
+	#page
+	{
+		background:  #827d7d;
+	}
+
+	#main
+	{
+		overflow: hidden;
+		float: right;
+		width: 800px;
+		padding: 3em 50px 5em 50px;
+		background: white;
+		border-top: 6px solid white;
+	
+	}
+#princ
+	{
+		text-align: center;
+		margin-bottom: 4em;
+	}
+#atv li a, ul a
+{
+	    display: block;
+		text-decoration:  none;
+		color: black;
+}
+#atv a:hover
+	{
+		color:#827d7d;
+		text-decoration: none; 
+	}
+

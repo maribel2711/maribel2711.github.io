@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/cont.css">
+	<meta charset="utf-8">
+	<title>Exercício 8</title>
+</head>
+<body>
+	<h1>Preencha uma lista ul no HTML com os itens: Diego, Gabriel e Lucas.</h1>
+	<ul id="pix"></ul>
+	<script>
+		var nome = ["Diego", "Gabriel", "Lucas"];
+		var lista = document.createElement ('ul');
+		lista.style.display = 'inline-block';
+		for ( x of nome)
+		{
+
+			var adclista = document.createElement ('li');
+			var txt = document.createTextNode (x);
+			adclista.appendChild(txt);
+			lista.appendChild(adclista);
+		}
+
+		var result = document.getElementById('pix');
+		result.appendChild(lista);
+
+
+	</script>
+	<div id="voltar">
+<a href="webcliente.html">Voltar</a>
+</div>
+</body>
+</html>

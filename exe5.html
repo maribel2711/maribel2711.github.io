@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8">
+<link rel="stylesheet" href="css/cont.css">
+<title>Exercício 5</title>
+</head>
+<body>
+<h1>Escreva uma função que mostre o nome do usuário e sua especialidade: </h1>
+<p id=msg1> </p>	
+<p id=msg2> </p>	
+<script>
+	
+function usuarios()
+{
+var usuarios = 
+[
+    {
+        nome: "Diego",
+        habilidades: ["Javascript", "ReactJS", "Redux"]
+    },
+    {
+        nome: "Gabriel",
+        habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+    }
+];
+
+    var diego = 
+    {
+        nome: "",
+        habilidades: [""]
+    };
+    var gabriel = 
+    {
+        nome: "",
+        habilidades: [""]
+    };
+    diego=usuarios[0];
+    gabriel=usuarios[1];
+	var diego_text="O " + diego.nome + " possui as habilidades: " + diego.habilidades;
+	var gabriel_text = " O " + gabriel.nome + " possui as habilidades: " + gabriel.habilidades + ".";
+	document.getElementById("msg1").innerHTML = diego_text;
+	document.getElementById("msg2").innerHTML = gabriel_text;
+}
+
+
+</script>
+<button onclick="usuarios();">Executar</button>
+<div id="voltar">
+<a href="webcliente.html">Voltar</a>
+</div>
+</body>
+</html>

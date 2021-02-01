@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Maria Moura</title>
+	<link rel="stylesheet" href="css/cont.css">
+</head>
+<body>
+	<h1>Variáeis</h1>
+	<p>Devem começar por uma letra, $ ou após a primeira letra, podem conter números por convenção, começam com letra minúscula e usam camelCase, são case-sensitive na declaração, usa-se var antes do nome da variável</p>
+	<li>var a = 10; // int</li>
+	<li>var b= 1.99; // float</li>
+	<li>var c= true; // boolean</li>
+	<li>var d= “Ana”; // string</li>
+	<li>var e = 3, f= 5; // válido</li>
+	<h1>Constante</h1>
+	<p>Coloca-se a palavra const na frente do nome. Assim como nas variáveis, os tipos de dados são inferidos.</p>
+	<li>const PI = 3.1416; // float</li>
+	<li>const TITULO = “Loja virtual”; // string</li>
+	<h1>Conversão de dados</h1>
+	<p>Feito automaticamente. Uso com atenção:</p>
+	<p>Regra: Soma com string sempre resultará em string.</p>
+	<li>var x = 10; // int</li>
+	<li>var y = “20”; // string</li>
+	<li>var z = x * y; // 200 (int)</li>
+	<li>var s = x + y; // “1020” (string)</li>
+	<h2>Conversão para Int</h2>
+	<p>Use a função parseInt:</p>
+	<li>var x = parseInt( “100” );</li>
+	<h2>Conversão para float</h2>
+	<p>Use a função parseFloat:</p>
+	<li>var x = parseFloat( “100.00” );<li>
+	<h2>Conversão para string</h2>
+	<p>Use o método toString()</p>
+	<li>var s1 = x.toString();</li>
+	<p>Também pode concatenar com uma string!</p>
+	<li>int para string: var x = 10; var s1 = x+ “”;</li>
+	<li> float para string: var y = 10.01; var s2 = y+ “”;</li>
+	<h1>Operadores de Atribuição</h1>
+	<p>Como no c++</p>
+	<li>i += 5; // 15</li>
+	<li>i *= 2; // 30</li>
+	<li>i /= 3; // 10</li>
+	<li>i -= 5; // 5</li>
+	<li>i %= 2; // 1</li>
+	<h1>Operadores Aritméticos</h1>
+	<li>i++; // Incrementa em 1</li>
+	<li>i--; // Decrementa em 1</li>
+	<p>Igual ao C++ !</p>
+	<li>a == b// igual</li>
+	<li>a != b// diferente</li>
+	<li>a > b// maior</li>
+	<li>a < b// menor</li>
+	<li>a >= b// maior ou igual</li>
+	<li>a <= b// menor ou igual</li>
+	<p>Porém, há o === que testa se os tipos e os valores são iguais.</p>
+	<h1>Operadores Lógicos</h1>
+	<p>Igual ao C++</p>
+	<li>a && b// e</li>
+	<li>a || b// ou</li>
+	<li>! a // negação</li>
+	<h1>Operador Térmico</h1>
+	<p>gual ao C++ !</p>
+	<li>var c = (a>b)  “Maior” :“Menor ou igual”;</li>
+	<li>var tratamento = (“M” == sexo) ? “Sr.” : “Sra.”;</li>
+	<h1>Estruturas de Comandos</h1>
+	<p>Se você lembra de C++, vai achar fácil, estruturas de comparação (if, switch) iguais, laços de repetição (for, while, do while) iguaisOperadores (&&, ||, ==, !=, !, ++, --, +=, -=, etc.) iguais, comentários (//, /* ... */ ) iguais</p>
+	<h2>IF</h2>
+	<P>if  ( a > b)document.write( “a é maior” );</p>
+	<p>else if  ( a < b)document.write( “bé maior” );</p>
+	<p>else  document.write( “a e bsão iguais.” );</p>
+	<h2>Switch</h2>
+	<p>switch ( opcao)</p>
+	<p>{ case1: sabor = “Uva”; break;</p>
+	<p>case2: sabor = “Limão”; break;</p>
+	<p>case3: sabor = “Maçã”;</p>
+	<p>break;</p>
+	<p>default: sabor = “Morango”; }</p>
+	<h2>For</h2>
+	<p>for( i= 0; ( i< 100 ); i++)</p>
+	<p>{ document.write(“Número: “ +i+ ); }</p>
+	<h2>While</h2>
+	<p>var i = 0;</p>
+	<p>while ( i< 100 ){ </p>
+	<p>document.write ( “Número: “ + i+ ); i++; }</p>
+<div id="voltar">
+<a href="webcliente.html">Voltar</a>
+</div>
+</body>
+</html>

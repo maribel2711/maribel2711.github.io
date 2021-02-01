@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf8">
+        <link rel="stylesheet" href="css/cont.css">
+        <title>Exerício 1</title>
+</head>
+<body>
+
+<h1>Transformações entre número de mol e massa (em gramas):</h1>
+<h2>Elemento selecionado: Nitrogenio</h2>
+
+<br>
+<div class="margem">
+    <h2> Transformar de mol para massa</h2>
+    <input 
+        type="number" 
+        id="entrada1"
+        placeholder="MOL"
+    >
+
+    <button onclick="chamaMOL();">Executar</button>
+    <br>
+    <p id="txt1"></p>
+    <br>
+    <br>
+
+    <h2> Transformar de massa para MOL</h2>
+    <input 
+        type="number" 
+        id="entrada2"
+        placeholder="GRAMAS"
+    >
+       <button onclick="chamaGRAMA();">Executar</button>
+    <p id="txt2"></p>
+ 
+
+<script>
+function chamaMOL()
+{
+    var n1 = document.getElementById("entrada1").value;
+    n1 = parseFloat(n1);
+    var massa = 0.0;
+    var gramas_nitrogenio = 28;
+    massa  =  n1 * gramas_nitrogenio;
+    var resultado = "28g - 1 mol N <br> Xg" +  " - " + n1 + " mol N<br> <br> " + gramas_nitrogenio + " X " + n1 + " = Xg x 1 mol N <br> <br> O resultado é: " + massa + " g de Nitrogenio";
+    document.getElementById("txt1").innerHTML = resultado;
+}
+
+function chamaGRAMA()
+{
+    var n1 = document.getElementById("entrada2").value;
+    n1 = parseFloat(n1);
+    var gramas_nitrogenio = 28;
+    mol  =  n1/gramas_nitrogenio;
+    var resultado = "28g de Nitrogenio - 1 mol N <br> " + n1 + " g de Nitrogenio -  x mol N<br> <br> " + n1 + " g de nitrogenio x 1 mol N " + " = x mol N x 28 g de Nitrogenio <br> <br>" +  n1 + " / " + gramas_nitrogenio +   "<br>O resultado é: " + mol + " mol de Nitrogenio";
+    document.getElementById("txt2").innerHTML = resultado;
+}
+ </script>
+ <div id="voltar">
+<a href="quimica.html">Voltar</a>
+</div>
+</body>
+</html>

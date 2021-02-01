@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercicío 1</title>
+	<meta charset="utf8">
+<link rel="stylesheet" href="css/cont.css">
+</head>
+<body>
+	<h1>Crie uma função com um endereço:</h1>
+<button onclick="chamaFuncao();">Executar</button>
+<p id=texto> </p>
+
+<script type="text/javascript">
+	var endereco = {rua: "Rua João Cabral Sobrinho",  
+	numero: 12,
+    bairro: "Prado",  
+    cidade: "Nova Friburgo",  
+    uf: "RJ"
+};
+function chamaFuncao(){
+	var endereco = { 
+	 	rua: "Rua João Cabral Sobrinho", 
+	 	numero: 12, 
+	 	bairro: "Prado", 
+		cidade: "Nova Friburgo", 
+		uf: "RJ"}
+		;
+	var texto = "O usuário mora em " + endereco.cidade + " / " + endereco.uf + ", no bairro " + endereco.bairro + " na rua " + endereco.rua + " com o numero " + endereco.numero;
+	document.getElementById("texto").innerHTML = texto;
+	return 0;
+}
+
+</script>
+
+<div id="voltar">
+<a href="webcliente.html">Voltar</a>
+</div>
+</body>
+</html>
