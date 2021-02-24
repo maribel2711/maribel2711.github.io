@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/cont.css">
+    <script src="./jquery-3.5.1.min.js"></script>
+    <meta charset="utf-8">
+    <title>Data por Extenso</title>
+        <script>
+        var s_minusculas = /[a-z]/;
+        var s_maiusculas = /[A-Z]/;
+        var s_numeros = /[1-9]/;
+        var s_especiais = /[@#!$%&*()-+.,=]/;
+        $(function () {
+            $("#data").click(function () {
+                let frase = $("#frase").val();
+                if (frase != "") {
+                    let d1 = frase.substr(8, 2);
+                    let a1 = frase.substr(0, 4);
+                    let m1 = frase.substr(5, 2);
+                    var mes = ""
+                    switch (m1) {
+                        case '01':
+                            mes = "janeiro"
+                            break;
+                        case '02':
+                            mes = "fevereiro"
+                            break;
+                        case '03':
+                            mes = "março"
+                            break;
+                        case '04':
+                            mes = "abril"
+                            break;
+                        case '05':
+                            mes = "maio"
+                            break;
+                        case '06':
+                            mes = "junho"
+                            break;
+                        case '07':
+                            mes = "julho"
+                            break;
+                        case '08':
+                            mes = "agosto"
+                            break;
+                        case '09':
+                            mes = "setembro"
+                            break;
+                        case '10':
+                            mes = "outubro"
+                            break;
+                        case '11':
+                            mes = "novembro"
+                            break;
+                        case '12':
+                            mes = "dezembro"
+                            break;
+                    }
+                    $("#frase").val("");
+                    $("#texto1").text(" Em extenso fica: " + d1 + " de " + mes + " de " + a1);
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Faça um programa que leia uma data de nascimento em formato de dd/mm/aaaa e escreva por extenso a data. Por exemplo: 03/05/2017 vira "03 de maio de 2017".</h1>
+    <input type="date" id="frase">
+    <button id="data">Transformar</button>
+    <p id="texto1"></p>
+    <div id="voltar">
+<a href="webcliente.html">Voltar</a>
+</div>
+</body>
+</html>

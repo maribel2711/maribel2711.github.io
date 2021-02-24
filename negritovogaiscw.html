@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf8">
+        <link rel="stylesheet" href="css/cont.css">
+        <script src="./jquery-3.5.1.min.js"></script>
+        <title>Vogais em Negrito</title>
+
+ <script>
+        function Vogal(tx) {
+            tx = tx.toUpperCase();
+            if (tx == "A" || tx == "E" || tx == "I" || tx == "O" || tx == "U")
+                return true;
+            return false;
+        }
+        $(function () {
+            $("#vogal").click(function () {
+                let frase = $("#frase").val();
+                let result = "";
+                for (i = 0; i <= frase.length - 1; i++) {
+                    if (Vogal(frase[i]))
+                        result += "<strong>" + frase[i] + "</strong>";
+                    if (Vogal(frase[i]) == 0)
+                        result += frase[i];
+                }
+                $("#texto1").html("As vogais em negritos são: " +result);
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Faça um programa que leia uma frase e escreva abaixo marcando as vogais em negrito.</h1>
+
+    <input type="text" id="frase">
+    <button id="vogal">Transformar</button>
+    <p id="texto1"></p>
+
+ <div id="voltar">
+<a href="webcliente.html">Voltar</a>
+</div>
+</body>
+</html>

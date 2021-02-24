@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/cont.css">
+    <meta charset="utf-8">
+    <script src="./jquery-3.5.1.min.js"></script>
+    <title>Anos de vida</title>
+ <script>
+        var s_minusculas = /[a-z]/;
+        var s_maiusculas = /[A-Z]/;
+        var s_numeros = /[1-9]/;
+        var s_especiais = /[@#!$%&*()-+.,=]/;
+        $(function () {
+            $("#data").click(function () {
+                let frase = $("#frase").val();
+                if (frase != "") {
+                    let d1 = frase.substr(8, 2);
+                    let a1 = frase.substr(0, 4);
+                    let m1 = frase.substr(5, 2);
+                    const agora = new Date();
+                    const nascimento = new Date(a1, m1 - 1, d1);
+                    const diff = Math.abs(agora.getTime() - nascimento.getTime());
+                    const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+                    $("#texto1").text(" Quem nasceu em: " + d1 + "/" + m1 + "/" + a1 + " tem " + days + " dias de vida");
+                    $("#frase").val("");
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h1>Faça um programa que leia uma data de nascimento e retorne quantos dias de vida a pessoa tem.</h1>
+    <input type="date" id="frase">
+    <button id="data">enviar</button>
+    <p id="texto1"></p>
+    <div id="voltar">
+<a href="webcliente.html">Voltar</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf8">
+        <link rel="stylesheet" href="css/cont.css">
+        <script src="./jquery-3.5.1.min.js"></script>
+        <title>Ocorrências</title>
+
+    <script>
+        function ocorrencias(palavras, palavra) {
+            return palavras.filter((v) => (v === palavra)).length;
+
+        }//contador de ocorrências
+        $(function () {
+            $("#limpeza").click(function () {
+                $("#frase").val("");
+                $("#texto1").text("");
+            })
+            $("#array").click(function () {
+                let frase = $("#frase").val();
+                var palavras = frase.split(" ").map(function (palavra) {
+                    return palavra.toLocaleLowerCase();
+                });
+                var arrayo = new Array;
+                var i = 0;
+                var x = 0;
+                var foio = [];
+                for (palavra of palavras) {
+                    if (foio.indexOf(palavra) == -1) {
+                        let oco = ocorrencias(palavras, palavra);
+                        foio.push(palavra);
+                        arrayo[x] = oco;
+                    }
+                    else {
+                        x--;
+                    }
+                    i++;
+                    x++;
+                }
+                var empateobj = [];
+                var maiorpalavra;
+                var contador = 0;
+                for (i = 0; i < foio.length; i++) {
+                    var maior = Math.max.apply(null, arrayo); //BIBILIOTECA DE MATEMÁTICA DO JS
+                    if (arrayo[i] == maior) {
+                        contador++;
+                        maiorpalavra = foio[i];
+                        empateobj[i] = foio[i];
+                    }
+                }
+                if (contador > 1) {
+                    $("#texto1").text(empateobj + "/ Essas palavras empataram ,  com " + arrayo[0] + " ocorrências ");
+                }
+                else {
+                    $("#texto1").text("A palavra mais ocorrida: " + maiorpalavra + ", com :  " + maior + " ocorrências.");
+                }
+            })
+        })
+    </script>
+
+</head>
+<body>
+    <h1>Faça um programa que leia um texto e indique a palavra de maior ocorrência e quantas vezes ela apareceu no texto.</h1>
+
+   <input type="text" id="frase" placeholder="Insira um texto" class="maior">
+    <button id="array">enviar</button>
+    <p id="texto1"></p>
+    <button id="limpeza">Limpar</button>
+
+ <div id="voltar">
+<a href="webcliente.html">Voltar</a>
+</div>
+</body>
+</html>
