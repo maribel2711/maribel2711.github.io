@@ -4,34 +4,154 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/cont.css">
 	<title>Exercício 3</title>
+
+	<!--Custom JS-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+
+    $(function(){
+    //aqui o código
+		$('#submeter').click(function(){
+
+			//Exercício 1
+			if(document.getElementById('a1').checked) {
+				//console.log('Questão 1: Resposta correta');
+				document.getElementById("fieldset1").className = "";
+				$('#input1').addClass("correto");
+				$('#fieldset1').addClass("fieldset_correto");
+				$('#acerto1').text("CORRETO").append($("<img>").attr({'src':'https://images.vexels.com/media/users/3/157871/isolated/lists/2f8afedb03309f34bb746cf38cb283ba-icone-de-marca-de-selecao-basica.png'}));
+			} else {
+				//console.log('Questão 1: Resposta errada. Resposta correta letra B');
+				document.getElementById("fieldset1").className = "";
+				$('#input1').addClass("correto");
+				$('#fieldset1').addClass("fieldset_errado");
+				$('#acerto1').text("ERRADO").append($("<img>").attr({'src':'https://cdn.pixabay.com/photo/2017/02/12/21/29/false-2061132_960_720.png'})).append('<br>')
+				.append("Gabarito: Letra B <br><br>")
+				.append("Primeiramente, precisamos converter a temperatura que está em graus celsius para kelvin, em seguida, para resolver o exercício, usaremos a equação de Clapeyron, observe: <br><br><strong> PV = nRT <br> 2.V = 2.0,08.(27+273) <br> V = 48/2 = 24 </strong><br><br> O resultado obtido no cálculo indica que a alternativa correta é a letra B.<br>");
+
+			}
+
+			//Exercício 2
+			if(document.getElementById('2').checked) {
+				//console.log('Questão 2: Resposta correta');
+				document.getElementById("fieldset2").className = "";
+				$('#input2').addClass("correto");
+				$('#fieldset2').addClass("fieldset_correto");
+				$('#acerto2').text("CORRETO").append($("<img>").attr({'src':'https://images.vexels.com/media/users/3/157871/isolated/lists/2f8afedb03309f34bb746cf38cb283ba-icone-de-marca-de-selecao-basica.png'}));
+			} else {
+				//console.log('Questão 2: Resposta errada. Resposta correta letra C');
+				document.getElementById("fieldset3").className = "";
+				$('#input2').addClass("correto");
+				$('#fieldset2').addClass("fieldset_errado");
+				$('#acerto2').text("ERRADO").append($("<img>").attr({'src':'https://cdn.pixabay.com/photo/2017/02/12/21/29/false-2061132_960_720.png'})).append('<br>')
+				.append("Gabarito: Letra C <br><br>")
+				.append("Inicialmente, precisamos descobrir a massa e, consequentemente, o volume de água. Para isso, faremos uso da relação entre massa, massa molar e número de mols, lembrando que a molécula de água é formada por dois átomos de hidrogênio e um de oxigênio. <br><br><strong> N = m / M <br> 2,0.10(ELEVADO A QUINTA POTENCIA) = M/18 -> M = 16.10(ELEVADO O QUINTA POTENCIA) g ou 16.10(elevado a quinta potencia) kg = (1600 kg)</strong> <br><br> Uma vez que a densidade da água é tomada como referência, de modo que 1 g de água ocupe o volume de 1 cm³, descobrimos que o volume de água é de 16.105 cm³. Além disso, cada litro contém o equivalente a 1000 cm³, dessa maneira, o volume total de água é de 1600 l.Usando o resultado obtido, vamos fazer o cálculo da pressão: <br><br><strong> P.V = n.R.T <br> P.1600 = 2,0.10(ELEVADO A QUINTA POTENCIA).0,08.(600) <br> P = (200000 . 0,08 . 600) / 1600 = 6000 ATM </strong> <br><br> Por meio do cálculo, descobrimos que a pressão exercida pelo vapor d'água equivale a 6000 atm, portanto, a alternativa correta é a letra C.<br>");
+			}
+
+			//Exercício 3
+			if(document.getElementById('3').checked) {
+				//console.log('Questão 3: Resposta correta');
+				document.getElementById("fieldset3").className = "";
+				$('#input3').addClass("correto");
+				$('#fieldset3').addClass("fieldset_correto");
+				$('#acerto3').text("CORRETO").append($("<img>").attr({'src':'https://images.vexels.com/media/users/3/157871/isolated/lists/2f8afedb03309f34bb746cf38cb283ba-icone-de-marca-de-selecao-basica.png'}));
+			} else {
+				//console.log('Questão 3: Resposta errada. Resposta correta letra B');
+				document.getElementById("fieldset3").className = "";
+				$('#input3').addClass("correto");
+				$('#fieldset3').addClass("fieldset_errado");
+				$('#acerto3').text("ERRADO").append($("<img>").attr({'src':'https://cdn.pixabay.com/photo/2017/02/12/21/29/false-2061132_960_720.png'})).append('<br>')
+				.append("Gabarito: Letra B <br><br>")
+				.append("Vamos analisar as alternativas:<br><br>a) <strong>FALSA</strong> – A transformação em que as trocas de calor entre o gás e suas vizinhanças é nula é a adiabática.<br>b) <strong>VERDADEIRA</strong><br>c) <strong>FALSA</strong> – Nas transformações isobáricas não ocorrem variações de pressão.<br>d) <strong>FALSA</strong> – Nas transformações isotérmicas não ocorrem variações de temperatura.<br>e) <strong>FALSA</strong> – O volume do gás permanece inalterado enquanto ele sofre uma transformação isovolumétrica.");
+			}
+		})
+    });
+  </script>
+
+	<style>
+	body {
+		text-align: left;
+	}
+		.correto {
+			background-color: lightgreen;
+		}
+		.legend {
+			color: white;
+			background-color: gray;
+			padding: 5px 10px;
+		}
+		.fieldset_correto {
+			border-color: lightgreen;
+		}
+		.fieldset_errado {
+			border-color: red;
+		}
+		.acerto {
+			text-align: left;
+		}
+		img {
+			width: auto;
+			height: 30px;
+			padding: 0px;
+			margin: 0px;
+			display: inline-block;
+		}
+		li {
+			list-style-type: none;
+		}
+
+	</style>
 </head>
 <body>
+		<form>
 
         <h1>Exercícios resolvidos sobre a equação de Clapeyron</h1>
-        <p>Questão 1) Dois mols de um gás ideal encontram-se à pressão de 2 atm e temperatura de 27 ºC. Determine o volume ocupado por esse gás.</p>
+
+				<!--Questão 1-->
+				<fieldset class="" id="fieldset1">
+				<legend class="legend">Questão 1</legend>
+				<p>Dois mols de um gás ideal encontram-se à pressão de 2 atm e temperatura de 27 ºC. Determine o volume ocupado por esse gás.</p>
         <li>Dados: R = 0,08 atm.l/mol.K</li>
+				<p><input type='radio' name='resp1' checked>Selecione uma das opções abaixo</p>
         <p><input type='radio' name='resp1' value='a'>a) 36L</p>
-        <p><input type='radio' name='resp1' value='b'>b) 24L</p>
+        <p id="input1"  class=""><input type='radio' name='resp1' value='b' id="a1">b) 24L</p>
         <p><input type='radio' name='resp1' value='c'>c) 50L</p>
         <p><input type='radio' name='resp1' value='d'>d) 48L</p>
-        <p><input type='radio' name='resp1' value='e'>e) 12L</p> 
-
-        <p>Questão 2) Calcule a pressão exercida por 2,0.105 mols de vapor d'água, aquecido à temperatura de 327 ºC. Considere que o vapor d'água, nesse caso, comporta-se aproximadamente como um gás ideal.</p>
+        <p><input type='radio' name='resp1' value='e'>e) 12L</p>
+				<p id="acerto1" class="acerto"></p>
+				</fieldset>
+				<br>
+			<!--Questão 2-->
+			<fieldset class="" id="fieldset2">
+			<legend class="legend">Questão 2</legend>
+        <p>Calcule a pressão exercida por 2,0.105 mols de vapor d'água, aquecido à temperatura de 327 ºC. Considere que o vapor d'água, nesse caso, comporta-se aproximadamente como um gás ideal.</p>
         <li>R = 0,08 atm.l/mol.K</li>
         <li>MH = 1 g/mol</li>
         <li>MO = 16 g/mol</li>
+				<p><input type='radio' name='resp2' checked>Selecione uma das opções abaixo</p>
         <p><input type='radio' name='resp2' value='a'>a) 200 atm</p>
         <p><input type='radio' name='resp2' value='b'>b) 1000 atm</p>
-        <p><input type='radio' name='resp2' value='c'>c) 6000 atm</p>
+        <p  id="input2"><input type='radio' name='resp2' value='c' id="2">c) 6000 atm</p>
         <p><input type='radio' name='resp2' value='d'>d) 500 atm</p>
-        <p><input type='radio' name='resp2' value='e'>e) 120 atm</p> 
-         <p>Questão 3) Em relação às transformações termodinâmicas sofridas pelos gases ideais, assinale a alternativa correta:</p>
+        <p><input type='radio' name='resp2' value='e'>e) 120 atm</p>
+				<p id="acerto2" class="acerto"></p>
+				</fieldset>
+				<br>
+			<!--Questão 3-->
+			<fieldset class="" id="fieldset3">
+			<legend class="legend">Questão 3</legend>
+        <p>Em relação às transformações termodinâmicas sofridas pelos gases ideais, assinale a alternativa correta:</p>
+				<p><input type='radio' name='resp3' checked>Selecione uma das opções abaixo</p>
         <p><input type='radio' name='resp3' value='a'>a) Nas transformações isotérmicas, as trocas de calor entre o gás e suas vizinhanças são nulas.</p>
-        <p><input type='radio' name='resp3' value='b'>b) Durante uma transformação isocórica, o volume do gás permanece constante.</p>
+        <p id="input3"><input type='radio' name='resp3' value='b' id="3">b) Durante uma transformação isocórica, o volume do gás permanece constante.</p>
         <p><input type='radio' name='resp3' value='c'>c) Nas transformações isobáricas, a variação de pressão ocorre de forma constante.</p>
         <p><input type='radio' name='resp3' value='d'>d) Transformações isotérmicas ocorrem quando a temperatura do corpo muda de maneira uniforme.</p>
-        <p><input type='radio' name='resp3' value='e'>e) Durante uma transformação isocórica, o volume do gás muda de acordo com o formato do recipiente.</p> 
-
+        <p><input type='radio' name='resp3' value='e'>e) Durante uma transformação isocórica, o volume do gás muda de acordo com o formato do recipiente.</p>
+				<p id="acerto3" class="acerto"></p>
+				</fieldset>
+				<br>
+				<button type="button" name="button" id="submeter">Enviar</button>
+		</form>
 
 <div id="voltar">
 <a href="quimica.html">Voltar</a>
