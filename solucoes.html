@@ -3,6 +3,74 @@
 <head>
 	<link rel="stylesheet" href="css/cont.css">
 	<title>Soluções</title>
+
+	<style media="screen">
+		span{
+			font-weight: bold;
+		}
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script>
+	$(function() {
+
+		$( "#botao1" ).click(function() {
+			var agua = $( "#input1_1" ).val();
+			var gramas = $( "#input1_2" ).val();
+			var agua_padrao = 100;
+			var gramas_padrao = 28.1;
+
+			//regra de 3 simples
+			var gramas_max = (agua * gramas_padrao) / agua_padrao
+			//simple if
+			if (gramas > gramas_max) {
+				$( "#tipo_solu" ).text("superssaturada");
+			} else if (gramas == gramas_max) {
+				$( "#tipo_solu" ).text("saturada");
+			} else {
+				$( "#tipo_solu" ).text("insaturada");
+			}
+		});
+
+		$( "#botao2" ).click(function() {
+			var gramas = $( "#input2_1" ).val();
+			var volume = $( "#input2_2" ).val();
+
+			var mol = gramas/142.04;
+			console.log(mol);
+
+			function ajuste(nr, casas) {
+				const og = Math.pow(10, 4)
+				return Math.floor(nr * og) / og;
+			};
+			mol = ajuste(mol, 2);
+			console.log(mol);
+
+			var molaridade = mol/volume;
+
+			$( "#grama" ).text(gramas);
+			$( ".mol" ).text(mol);
+			$( ".volume" ).text(volume);
+			$( "#molaridade" ).text(molaridade);
+
+			var agua_padrao = 1;
+			var gramas_padrao = 281;
+
+			//regra de 3 simples
+			var gramas_max = (volume * gramas_padrao) / agua_padrao
+			//simple if
+			$( "#possivel" ).text(gramas_max);
+			if (gramas > gramas_max) {
+				$( "#ha_nao" ).text("Há");
+			} else {
+				$( "#ha_nao" ).text("Não há");
+			}
+		});
+
+
+	});
+	</script>
 </head>
 <body>
 	<h1>Soluções</h1>
@@ -17,6 +85,18 @@
 	<li>Iônica: é a solução que apresenta um soluto de natureza iônica, ou seja, é capaz de sofrer o fenômeno da dissociação ou ionização. Exemplo: cloreto de sódio;</li>
 	<li>Molecular: é a solução que apresenta um soluto de natureza molecular, ou seja, não é capaz de sofrer o fenômeno da dissociação ou ionização. Exemplo: glicose.</li>
 
+	<h2>Classificaçãos das soluções quanto a quantidade de soluto e solvente (Saturação da solução):</h2>
+	<li>Soluções insaturadas: Menos soluto em relação à quantidade de solvente.</li>
+	<li>Soluções saturadas: Máxima quantidade de soluto em determinada quantidade de solvente.</li>
+	<li>Soluções supersaturadas: Maior quantidade de soluto em relação à quantidade de solvente.</li>
+	<li>Soluções supersaturadas com corpo de fundo: Maior quantidade de soluto em relação à quantidade de solvente, só que esse excesso se deposita no fundo do recipiente.</li>
+	<img src="https://www.aplusplatform.com/uploads/586f59d79fe479a073cda8ea" alt="exemplo" style="height: auto; width: auto;">
+	<legend style="text-align:center; font-size:small;">Exemplo de solução supersaturada, a superssaturação é um estado delicado. Quando perturbado, como mostrado na imagem, desencadeia a deposição</legend>
+	<br>
+	<br/><p>Vou deixar aqui uma simulação para exemplificar:</p>
+	<p>Digite a quantide de <input type="text" id="input1_1" placeholder="Gramas de água"> e de <input type="text" id="input1_2" placeholder="Gramas de sulfato de sódio (Na2SO4)" size="26"> = Solução <span id="tipo_solu"></span></p>
+	<p><button type="button" name="button" id="botao1">Executar</button></p>
+
 	<h2>Concentração ou aspectos quantitativos das soluções</h2>
 	<p>A determinação das quantidades de soluto, solvente, volume, massa ou qualquer outra medida quantitativa relacionada a uma solução é denominada concentração, como nos seguintes casos:</p>
 	<li>Concentração comum: é a relação entre a massa do soluto e o volume da solução;</li>
@@ -25,8 +105,20 @@
 	<li>Título em volume: é a relação entre o volume do soluto e o volume da solução;</li>
 	<li>Ppm: é a relação de uma parte do soluto existente em um milhão de partes da solução;</li>
 	<li>Concentração em mol/L ou molaridade: é a relação entre o número de mol do soluto e o volume da solução;</li>
-	<li>Molalidade: é a relação entre o número de mol do soluto e a massa do solvente;</li>
+	<li>Molalidade: é o número de mols de soluto dissolvido por quilograma (1000 g) de solvente;</li>
 	<li>Fração molar: é a relação entre o número de mol do soluto ou do solvente e o número de mol da solução.</li>
+	<br>
+	<p>A exemplo vamos calcular aqui a Molaridade de sulfato de sódio (Na2SO4) para determinada quantidade de água:</p>
+	<p>Digite <input type="text" id="input2_1" placeholder="Gramas de sulfato de sódio (Na2SO4)"> e <input type="text" id="input2_2" placeholder="Volume de solução em Litros">  <button type="button" name="button" id="botao2">Executar</button></p>
+	<p>Esses dois valores serão necessários para a realização do cálculo.</p>
+	<br>
+	<p>Já que estamos calculando molaridade vamos ter que converter de grama para mol: <span id="grama"></span> g -> <span class="mol"></span> mol</p>
+	<p>A fórmula para calcularmos a Molaridade é: Molaridade = Mols do soluto / Volume da solução</p>
+	<p>Adaptando os valores para o nosso caso temos: Molaridade = <span class="mol"></span> / <span class="volume"></span> = <span id="molaridade"></span> mol/L</p>
+	<br>
+	<p>Para verificarmos se apresenta corpo de fundo precisamos saber que em cada 0,1 litro podem ser dissolvidos até  28.1 g de Na2SO4, lembrando que isso é à temperatura ambiente</p>
+	<p>Para <span class="volume"></span> litros podem ser dissolvidos até <span id="possivel"></span> g</p>
+	<p><span id="ha_nao"></span> corpo de fundo nessas condições</p>
 
 	<h2>Diluição de soluções</h2>
 	<p>É o procedimento realizado com uma única solução que consiste em adicionar ou retirar (por meio de evaporação ou ebulição) solvente de uma solução preexistente, o que pode resultar em:</p>
@@ -47,9 +139,18 @@
 	<li>Destilação fracionada: método que se baseia no ponto de vaporização, usado para separar misturas homogêneas líquidas. A destilação do petróleo obedece a este método e cada componente é destilado a uma temperatura diferente.</li>
 	<li>Fusão fracionada: método que se baseia no ponto de fusão dos componentes da mistura, é usado para separar mistura homogênea composta por vários sólidos. Como cada sólido possui um ponto de fusão diferente, basta aquecer a mistura fazendo com que o sólido com ponto de fusão maior escoe, separando-se dos de ponto de fusão menores, como por exemplo, a separação de enxofre e areia que segue este método.</li>
 
+	<br>
+	<p>#Considere "." como delimitador de casas decimais. Caso tente usar "," pode ocasionar erro pois a "," tem outros usos nas linguagens de programação</p>
+	<br><br>
+	<p>Selecionei 3 vídeo sobre esses assuntos de química que achei no canal do Brasil Escola. O primeiro é uma introdução, nada aprofundado. O segundo trata da concentração molar, pro caso de ter ficado alguma dúvida quanto a segunda simulação. E por fim o terceiro vídeo trata do coeficiente de solubilidade, algo que não foi visto no resumo que aqui fizemos. Espero que os vídeos cubram qualquer dúvida restante</p>
+	<h3>Soluções - Brasil Escola</h3>
+	<iframe width="1280" height="544" src="https://www.youtube.com/embed/1JuxCLYJ9PU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<h3>Concentração Molar ou Concentração em Mol/L - Brasil Escola</h3>
+	<iframe width="1280" height="544" src="https://www.youtube.com/embed/XKD2OXaQjDg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<h3>Coeficiente de Solubilidade - Brasil Escola</h3>
+	<iframe width="1280" height="544" src="https://www.youtube.com/embed/h20w_U3hg5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 	   <div id="voltar">
-    <a href="exegases.html">Exercícios</a>
-    
     <a href="quimica.html">Voltar</a>
     </div>
 </body>
